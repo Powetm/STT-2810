@@ -1,0 +1,25 @@
+---
+title: "Research Proposal"
+author: "Teirra"
+date: "Wednesday, February 04, 2015"
+output: html_document
+bibliography: Obesity.bib
+---
+
+Title: 
+The correlation between physical activity and increase in BMI (body mass index), along with ways to reduce BMI with physical activity
+
+Author:
+Teirra Powe
+
+Introduction:
+Concern over the rapid increase in childhood obesity in the US has been widely expressed in the medical literature. @ekelund_tv_2006 Over the past couple of decades, the obesity rate has been on a steady increase. Also with that increase there has also been an increase in amount of time society spends watching TV. Less physically active children and those who watched more television after school were more likely to become overweight. @ekelund_tv_2006 The correlation between BMI (body mass index) and how it has an effect on individuals that spend in increase amount of time watching TV, will also show a correlation between people that are physically active in their daily life. This research will find a method that helps the inactive individuals that use most of their spare time watching TV, and find the best way to get them to become more active and help fight the obesity epidemic that our society is now facing.
+
+Method:
+The primary sampling frame for Add Health is a database collected by Quality Education Data, Inc. Systematic sampling methods and implicit stratification ensure that the 80 high schools and 52 middle schools that were selected are representative of US schools with respect to region of country, urbanicity, size, type, and ethnicity. Eligible high schools included an 11th grade and enrolled more than 30 students. More than 70 percent of the originally sampled high schools participated. Each school that declined to participate was replaced by a school within the stratum. @_wave_???? Using the data set from these numbers, we can see that the ampling size is N=6504. In order to colledct this data, an in home interview was conducted for 1-2 hours. All the data was recorded on laptops, and to insure that the questions were understuood, some where read out loud and some where listened to on headphones (for sensitive information) to make the subject more comfortable with answer and provide accurat information. Each subject was also given a  vocabulary test before the interview to make sure that they were able to comprehend the questions that wuld be asked. In measureing this data, there were 41 sets of questions for each subject to answer, there were questions such as their age which can be represented by the variable H1GI1M (date of birth). Using this data set, as well a research from other articles in this area, I will be able to determine how watching TV affects children’s BMI. I will also be able to determine some alternatives to watching TV in order to decrease their BMI and help them be more active to fight the obesity epidemic 
+
+
+Implications:
+Being the obestiy is such a huge problem in society today, finding a way to fight this epidemics is a huge deal. d. The one potentially important and changeable factor identified as a target for intervention centers on how children spend their time, especially their after-school time. Children who are more physically active and spend less time watching TV after school are less likely to become overweight by age 12, @obrien_ecology_2007 this is the fight that is worth fighting for.
+
+# Reference

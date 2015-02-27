@@ -1,0 +1,36 @@
+---
+title: "Data Managment"
+author: "Teirra"
+date: "Friday, February 20, 2015"
+output: html_document
+---
+
+Subset for H1DA5 that did play a sport    
+Can't get H1DA8 and H1DA10 blanks to go into subset
+
+## Purpose of the study
+```{r}
+library(PDS)
+```
+## Variables
+```{r}
+addhealth.subset <-AddHealth[AddHealth$H1DA5 == 0,]
+library(Hmisc)
+label(AddHealth$H1DA5) <- "Number of times playing sports this week"
+label(AddHealth$H1DA8) <- "Hours spent watching TV"
+label(AddHealth$H1DA10) <- "Hours spent playing videogames"
+library("descr")
+
+summary(AddHealth$H1DA8)
+AddHealth$H1DA8[AddHealth$H1DA8 == 996] <- NA
+AddHealth$H1DA8[AddHealth$H1DA8 == 998] <- NA
+summary(AddHealth$H1DA8)
+
+freq(as.ordered(AddHealth$H1DA5))
+freq(as.ordered(AddHealth$H1DA8))
+hist(AddHealth$H1DA8, xlab = "Hours per week", 
+     main = "Watching TV", col = "red")
+freq(as.ordered(AddHealth$H1DA10))
+
+```
+## How data was managed

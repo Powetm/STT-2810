@@ -1,0 +1,21 @@
+---
+title: "Citation Assignment"
+output: html_document
+bibliography: Obesity.bib
+---
+
+@williams_review_2008 Studies indicate that in adults, greater amounts of TV viewing are consistently associated with increased overweight risk, both cross-sectionally and longitudinally, but that results are mixed regarding the relationship between adult TV viewing and other health outcomes.Increased TV watching reduces energy expenditure, predominantly through reducing time spent in physical activity, and increasing energy intake.
+
+*@kennedy_childrens_2002 Children perceived TV as providing educational and relational need. Although they preferred alternative to TV, they had difficulty articulation and getting these needs met. These researchers design an intervention that helps decrease a variable thought to mediate health behavior and television watching, by asking the question how and why do children watch so much TV?
+
+@anonymous_how_2000 Activities like watching TV that do not require you to think may have negative effects an brain development and can cause you to do poorly in school, especially in reading.
+
+@arsenault_parents_2014 This study shows the influence that parent have on their child when it comes to obesity-related behaviors. The behavior that a parent conducts in their daily life influence the child's behavior. Researchers are say that if any professions is developing a method to prevent childhood obesity, they should include aspects of parent/family health in their prevention tactics.
+
+*@obrien_ecology_2007 The goal of the study that these researchers conducted was to find a correlation between the three levels of ecological covariates (Sociocultural, intra- and inter-personal, environmental) and patterns of growth indexed by BMI measured from age 2 to age 12.  
+
+*@ekelund_tv_2006 TV viewing has been linked to metabolic-risk factors in youth. However, it is unclear whether this association is independent of physical activity (PA) and obesity. Research show that TV viewing has increase over the past few decades, while physical activity has decreased. Researchers are trying to show that increased TV viewing is directly proportional to increased obesity, and is indirectly proportional to decease physical activity.
+
+As of right now, the research question that I will be researching for the duration of the semester is the correlation between BMI(body mass index) and how it has an effect on individuals that have are physical active in their daily life and those that are not. Articles 2, 5 and 6 seem to have the most research for the topic that have chosen, and I feel that they will provide the most help with answering my question. These articles have a lot of data about this correlation, and may possibly be answering the question that I am proposing. So in order to add to their research, I want to find a method that helps the inactive individuals that use most of their spare time watching TV, and get them to become more active and help fight the obesity epidemic that our society is now facing. 
+
+# Reference
