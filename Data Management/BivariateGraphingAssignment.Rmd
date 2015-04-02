@@ -1,0 +1,100 @@
+---
+title: "Bivariate Graphing Assignment"
+date: "Friday, March 20, 2015"
+output: html_document
+---
+```{r}
+knitr::opts_chunk$set(comment = NA, message = FALSE, warning = FALSE, fig.align = "center")
+```
+###########################################################################
+### Purpose of the study
+###########################################################################
+Concern over the rapid increase in childhood obesity in the US has been widely expressed in the medical literature. Over the past couple of decades, the obesity rate has been on a steady increase. Also with that increase there has also been an increase in amount of time society spends watching TV. Less physically active children and those who watched more television after school were more likely to become overweight. The correlation between BMI (body mass index) and how it has an effect on individuals that spend in increase amount of time watching TV, will also show a correlation between people that are physically active in their daily life.The purpose of this research is to find a correlation between lack of physical activity and an increase in the amount of time adolescent spend watching TV. With the increased time spent in front of the TV more adolescents are becoming obese because they are less physically active.
+
+
+##########################################################################
+## Variables
+##########################################################################
+These variables are there to show `Hours spent watching TV` and `Hours spent playing videogames` by adolescents, all while being compared to `Number of times playing sports this week` by those same adolescents.
+
+
+############################################################################
+## How data was managed
+############################################################################
+ This data is organized by order. The number times adolescents did NOT play any type of sport during the week. Then is shows how many adolescences watch between 0-99 hours of TV during the week. As well as how many hour adolescents spent between 0-99 hours playing video games.
+ 
+ 
+###########################################################################
+```{r echo=FALSE}
+library(PDS)
+library(descr)
+library(Hmisc)
+library(dplyr)
+```
+##########################################################################
+
+
+#########################################################################
+## Data Management
+#########################################################################
+```{r echo=FALSE}
+AHS <- AddHealth %>%
+  filter(H1DA5!=0) %>%
+  select(H1DA5,H1DA8,H1DA10)
+head(AHS)
+
+AHS <- AHS %>%
+  rename(Sports=H1DA5, TV=H1DA8, VideoGames=H1DA10)
+head(AHS)
+
+
+label(AHS$Sports) <- "Number of times playing sports this week"
+label(AHS$TV) <- "Hours spent watching TV"
+label(AHS$VideoGames) <- "Hours spent playing videogames"
+
+
+
+AHS$Sports[AHS$Sports == 6] <- NA
+AHS$Sports[AHS$Sports == 8] <- NA
+summary(AHS)
+
+AHS$Sports <- factor(AHS$Sports)[,drop=TRUE]
+summary(AHS$Sports)
+```
+#Catergorical Variable:
+This graph is a representation of how many times per week the adolescents from this study participate in playing any type of active sport. The majority either play `1 or 2 times` or `5 or more times` during the week.
+```{r echo=FALSE}
+AHS$Sports <- factor(AHS$Sports,
+                    labels = c("1 or 2 times", "3 or 4 times", "5 or more times"))
+
+freq((AHS$Sports), main = "Adolescents playing sports", ylab = "Frequency", xlab = "Number of times per week", col = "red")
+```
+
+#Quantitative Variable:
+This frequency graph is skewed left and shows how often adolescents from the previous study spend `Watching TV`. Most of them watch less the `13 hours` but there is a spike at `10 hours`.
+```{r echo=FALSE}
+AHS$TV[AHS$TV == 996] <- NA
+AHS$TV[AHS$TV == 998] <- NA
+summary(AHS$TV)
+freq((AHS$TV), main = "Adolescents Watching TV", ylab = "Frequency", xlab = "Number of hours per week", col = "blue")
+```
+#Quantitative Variable:
+This density graph show how many hours adolescents spend playing video games during a given week. This graph is skewed left and peaks at aroud 1-2 hours. There is a drastic decrease around 5 hours and then it continues to flucuate after 10 hours.
+```{r echo=FALSE}
+AHS$VideoGames[AHS$VideoGames == 996] <- NA
+AHS$VideoGames[AHS$VideoGames == 998] <- NA
+summary(AHS$VideoGames)
+
+plot(density(AHS$VideoGames, na.rm=TRUE),col="Orange", main="Adolescents Playing Video Games", xlab="Number of hours per week")
+```
+
+###############################################################
+##MultiVariant Graph
+###############################################################
+```{r}
+table(AHS$Sports, AHS$TV)
+prop.table(table(AHS$Sports, AHS$TV))
+barplot(prop.table(table(AHS$Sports, AHS$TV)), main="Relationship between Adolescents that play sports and watch tv", xlab= "Hours per week watching TV", ylab= "# of times playing a sport")
+```
+This multivariant graph shoes a comparison between the number od times adolescents play an active sport during a given week and hour many hours the spend watch TV.
+

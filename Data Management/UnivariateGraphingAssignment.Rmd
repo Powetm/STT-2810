@@ -1,0 +1,68 @@
+---
+title: "Data Management Assignment"
+author: date: "Friday, February 20, 2015"
+output: html_document
+---
+###########################################################################
+## Purpose of the study
+###########################################################################
+The purpose of this research is to find a correlation between lack of physical activity and an increase in the amount of time adolescent spend watching TV. With the increased time spent in front of the TV more adolescents are becoming obese because they are less physically active.
+
+```{r}
+library(PDS)
+```
+##########################################################################
+# Variables
+##########################################################################
+These variables are there to show `Hours spent watching TV` and `Hours spent playing videogames` by adolescents, all while being compared to `Number of times playing sports this week` by those same adolescents.
+
+############################################################################
+# How data was managed
+############################################################################
+ This data is organized buy order. The number times adolescents did NOT play any type of sport during the week. Then is shows how many adolescences watch between 0-99 hours of TV during the week. As well as how many hour adolescents spent between 0-99 hours playing video games.
+
+#########################################################################
+# Data Management
+#########################################################################
+```{r}
+addhealth.subset <-AddHealth[AddHealth$H1DA5 == 0,]
+library(Hmisc)
+label(AddHealth$H1DA5) <- "Number of times playing sports this week"
+label(AddHealth$H1DA8) <- "Hours spent watching TV"
+label(AddHealth$H1DA10) <- "Hours spent playing videogames"
+library("descr")
+
+AddHealth$H1DA5[AddHealth$H1DA5 == 0] <- NA
+AddHealth$H1DA5[AddHealth$H1DA5 == 6] <- NA
+AddHealth$H1DA5[AddHealth$H1DA5 == 8] <- NA
+summary(AddHealth$H1DA5)
+
+AddHealth$H1DA8[AddHealth$H1DA8 == 996] <- NA
+AddHealth$H1DA8[AddHealth$H1DA8 == 998] <- NA
+summary(AddHealth$H1DA8)
+
+AddHealth$H1DA10[AddHealth$H1DA10 == 996] <- NA
+AddHealth$H1DA10[AddHealth$H1DA10 == 998] <- NA
+summary(AddHealth$H1DA10)
+
+```
+# Frequency Distributions for Variables
+```{r}
+freq(AddHealth$H1DA5, main="Number of times playing sports this week", names=c("Not at all", "1-2 times", "3-4 times", "5> times", "Refused", "Don't Know"), ylab="Frequency")
+```
+
+This frequency graph had a uniform graph. It does not skew in any direction.
+
+#############################################################################################
+## GRAPHHS
+```{r}
+hist(AddHealth$H1DA8, main="Hours spent watching TV by Adolescent", xlab="Hours per week", ylab="Frequency", col="red")
+```
+
+This histogram shows how many hours adolescents spent watching TV. The range goes from 0-99. You can see that the graph is skewed right. There is a peak between 0-10 hours.
+```{r} 
+freq(AddHealth$H1DA10, main="Hours spent playing videogames", xlab="Hours per week", ylab="Frequency", col="blue")
+```
+
+This frequency table shows how many hours adolescents spent playing video games per week. The range goes from 0-99 just as the histogram above. You can see that the graph is skewed right as well. There is a peak between 0-4 hours. While this is a quantitive variable, i used a frequency table because it showed the hours on a better scale than a histogram.
+#############################################################################################
